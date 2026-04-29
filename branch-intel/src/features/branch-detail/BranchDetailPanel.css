@@ -1,0 +1,159 @@
+.branch-detail {
+  width: 320px;
+  flex-shrink: 0;
+  border-left: 1px solid var(--border);
+  padding: 16px;
+  text-align: left;
+  overflow-y: auto;
+  max-height: calc(100vh - 120px);
+}
+
+.branch-detail__title {
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.branch-detail__card h3 {
+  font-size: 17px;
+  margin: 8px 0;
+}
+
+.branch-detail__badge {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.branch-detail__badge--hq {
+  background: rgba(0, 100, 58, 0.12);
+  color: var(--aa-green-strong);
+}
+
+.branch-detail__badge--flagship {
+  background: rgba(0, 100, 58, 0.12);
+  color: var(--aa-green);
+}
+
+.branch-detail__badge--satellite {
+  background: rgba(243, 209, 9, 0.25);
+  color: #7d6a00;
+}
+
+.branch-detail__meta {
+  font-size: 14px;
+  margin: 4px 0;
+  color: var(--text);
+}
+
+.branch-detail__load {
+  font-size: 14px;
+  margin-top: 8px;
+  color: var(--text-h);
+}
+
+.branch-detail__services {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+.branch-detail__hint {
+  font-size: 14px;
+  color: var(--text);
+  margin: 0;
+}
+
+.branch-detail__hint--small {
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.branch-detail__section {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.branch-detail__section-title {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.branch-detail__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: var(--text-h);
+}
+
+.branch-detail__field input,
+.branch-detail__field select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 14px;
+}
+
+.branch-detail__ranked {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.branch-detail__rank-btn {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--social-bg);
+  cursor: pointer;
+  text-align: left;
+}
+
+.branch-detail__rank-btn:hover {
+  border-color: var(--accent-border);
+}
+
+.branch-detail__rank-num {
+  font-weight: 700;
+  color: var(--aa-green);
+  min-width: 1.25rem;
+}
+
+.branch-detail__rank-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.branch-detail__rank-name {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.branch-detail__rank-stats {
+  font-size: 12px;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .branch-detail {
+    width: 100%;
+    max-height: none;
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+}

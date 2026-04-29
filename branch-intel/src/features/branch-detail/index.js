@@ -1,0 +1,1 @@
+export { BranchDetailPanel } from './BranchDetailPanel'
