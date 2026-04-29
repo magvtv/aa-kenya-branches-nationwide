@@ -1,0 +1,314 @@
+{
+  "_notes": {
+    "coordinates": "Lat/lon values are approximate, derived from each locality. Replace with exact branch coordinates when available.",
+    "contacts": "Phone numbers reflect the public listings. Verify before relying on them; some entries may need correction (e.g. 9-digit numbers)."
+  },
+  "hq": {
+    "id": "HQ1",
+    "name": "AA Kenya Headquarters",
+    "city": "Nairobi",
+    "locality": "Upper Hill",
+    "lat": -1.2998,
+    "lon": 36.8155,
+    "location": {
+      "building": "Renaissance Corporate Park",
+      "floor": "8th Floor",
+      "area": "Upper Hill",
+      "fullAddress": "Renaissance Corporate Park, 8th Floor, Upper Hill, Nairobi"
+    },
+    "address": "Renaissance Corporate Park, 8th Floor, Upper Hill, Nairobi",
+    "contacts": {
+      "phone": ["0709933011"]
+    }
+  },
+  "services": [
+    "Driving School",
+    "Vehicle Valuation",
+    "Vehicle Inspection",
+    "IDP",
+    "Membership Registration"
+  ],
+  "branches": [
+    {
+      "branchId": "NBO001",
+      "name": "AA Hurlingham",
+      "city": "Nairobi",
+      "locality": "Hurlingham",
+      "category": "satellite",
+      "lat": -1.296,
+      "lon": 36.79,
+      "location": {
+        "building": "APA Arcade",
+        "floor": "3rd Floor",
+        "area": "Hurlingham",
+        "fullAddress": "APA Arcade, 3rd Floor, Hurlingham, Nairobi"
+      },
+      "address": "APA Arcade, 3rd Floor, Hurlingham",
+      "services": [
+        "Driving School",
+        "Vehicle Valuation",
+        "Vehicle Inspection",
+        "IDP",
+        "Membership Registration"
+      ],
+      "loadPercent": 60,
+      "contacts": {
+        "phone": ["0709933000"]
+      }
+    },
+    {
+      "branchId": "NBO002",
+      "name": "AA Embakasi",
+      "city": "Nairobi",
+      "locality": "Embakasi",
+      "category": "satellite",
+      "lat": -1.3316,
+      "lon": 36.904,
+      "location": {
+        "building": "AA House",
+        "street": "Catherine Ndereba Road",
+        "area": "Embakasi",
+        "fullAddress": "AA House, Catherine Ndereba Road, Embakasi, Nairobi"
+      },
+      "address": "AA House, Catherine Ndereba Road, Embakasi",
+      "services": [
+        "Driving School",
+        "Vehicle Valuation",
+        "Vehicle Inspection",
+        "IDP",
+        "Membership Registration"
+      ],
+      "loadPercent": 64,
+      "contacts": {
+        "phone": ["070993301"]
+      }
+    },
+    {
+      "branchId": "NBO003",
+      "name": "AA Village Market",
+      "city": "Nairobi",
+      "locality": "Gigiri",
+      "category": "satellite",
+      "lat": -1.231,
+      "lon": 36.806,
+      "location": {
+        "building": "Village Market Complex",
+        "floor": "Ground Floor",
+        "area": "Gigiri",
+        "fullAddress": "Village Market Complex, Ground Floor, Gigiri, Nairobi"
+      },
+      "address": "Village Market Complex, Ground Floor, Gigiri",
+      "services": ["Driving School", "IDP", "Membership Registration"],
+      "loadPercent": 52,
+      "contacts": {
+        "phone": ["0709333901"]
+      }
+    },
+    {
+      "branchId": "NBO004",
+      "name": "AA Sarit",
+      "city": "Nairobi",
+      "locality": "Westlands",
+      "category": "satellite",
+      "lat": -1.262,
+      "lon": 36.803,
+      "location": {
+        "building": "Sarit Center",
+        "street": "Parklands Road",
+        "landmark": "Sarit Center Roundabout",
+        "floor": "2nd / 3rd Floor",
+        "area": "Westlands",
+        "fullAddress": "Sarit Center, Parklands Road (Sarit Center Roundabout), 2nd / 3rd Floor, Westlands, Nairobi"
+      },
+      "address": "Sarit Center, Parklands Road, 2nd / 3rd Floor, Westlands",
+      "services": [
+        "Driving School",
+        "Vehicle Valuation",
+        "Vehicle Inspection",
+        "IDP",
+        "Membership Registration"
+      ],
+      "loadPercent": 66,
+      "contacts": {
+        "phone": ["0709933520"]
+      }
+    },
+    {
+      "branchId": "NBO005",
+      "name": "AA Karen",
+      "city": "Nairobi",
+      "locality": "Karen",
+      "category": "satellite",
+      "lat": -1.329,
+      "lon": 36.708,
+      "location": {
+        "building": "Karen Square",
+        "floor": "2nd Floor",
+        "area": "Karen",
+        "fullAddress": "Karen Square, 2nd Floor, Karen, Nairobi"
+      },
+      "address": "Karen Square, 2nd Floor, Karen",
+      "services": [
+        "Driving School",
+        "Vehicle Valuation",
+        "Vehicle Inspection",
+        "IDP",
+        "Membership Registration"
+      ],
+      "loadPercent": 70,
+      "contacts": {
+        "phone": ["0757059157"]
+      }
+    },
+    {
+      "branchId": "NBO006",
+      "name": "AA Wendani",
+      "city": "Nairobi",
+      "locality": "Kahawa Wendani",
+      "category": "satellite",
+      "lat": -1.19,
+      "lon": 36.93,
+      "location": {
+        "area": "Kahawa Wendani",
+        "landmark": "Opposite Kahawa Barracks Main Gate",
+        "proximity": ["Near Kahawa Barracks main gate"],
+        "fullAddress": "Opposite Kahawa Barracks Main Gate, Kahawa Wendani, Nairobi"
+      },
+      "address": "Opposite Kahawa Barracks Main Gate, Kahawa Wendani",
+      "services": ["Driving School", "IDP", "Membership Registration"],
+      "loadPercent": 50,
+      "contacts": {
+        "phone": ["0709333004"]
+      }
+    },
+    {
+      "branchId": "NBO007",
+      "name": "AA Sukari",
+      "city": "Nairobi",
+      "locality": "Sukari",
+      "category": "satellite",
+      "lat": -1.145,
+      "lon": 36.97,
+      "location": {
+        "building": "Mizpah Building",
+        "area": "Sukari",
+        "fullAddress": "Mizpah Building, Sukari"
+      },
+      "address": "Mizpah Building, Sukari",
+      "services": ["Driving School", "IDP", "Membership Registration"],
+      "loadPercent": 47,
+      "contacts": {
+        "phone": ["0709333026"]
+      }
+    },
+    {
+      "branchId": "NBO008",
+      "name": "AA Buruburu",
+      "city": "Nairobi",
+      "locality": "Buruburu",
+      "category": "satellite",
+      "lat": -1.278,
+      "lon": 36.878,
+      "location": {
+        "building": "Gemuwa House",
+        "floor": "3rd Floor",
+        "area": "Buruburu",
+        "fullAddress": "Gemuwa House, 3rd Floor, Buruburu, Nairobi"
+      },
+      "address": "Gemuwa House, 3rd Floor, Buruburu",
+      "services": [
+        "Driving School",
+        "Vehicle Valuation",
+        "Vehicle Inspection",
+        "IDP",
+        "Membership Registration"
+      ],
+      "loadPercent": 58,
+      "contacts": {
+        "phone": ["0709333003"]
+      }
+    },
+    {
+      "branchId": "NBO009",
+      "name": "AA Rongai",
+      "city": "Kajiado",
+      "locality": "Ongata Rongai",
+      "category": "satellite",
+      "lat": -1.397,
+      "lon": 36.744,
+      "location": {
+        "building": "Tyme Suite",
+        "floor": "4th Floor",
+        "area": "Ongata Rongai",
+        "fullAddress": "Tyme Suite, 4th Floor, Ongata Rongai"
+      },
+      "address": "Tyme Suite, 4th Floor, Ongata Rongai",
+      "services": ["Driving School", "IDP", "Membership Registration"],
+      "loadPercent": 54,
+      "contacts": {
+        "phone": ["0709333030"]
+      }
+    },
+    {
+      "branchId": "NBO010",
+      "name": "AA Ruaraka",
+      "city": "Nairobi",
+      "locality": "Ruaraka",
+      "category": "satellite",
+      "lat": -1.247,
+      "lon": 36.88,
+      "location": {
+        "building": "Top Brass House",
+        "floor": "2nd Floor",
+        "street": "Outering Road",
+        "area": "Ruaraka",
+        "fullAddress": "Top Brass House, 2nd Floor, along Outering Road, Ruaraka, Nairobi"
+      },
+      "address": "Top Brass House, 2nd Floor, along Outering Road, Ruaraka",
+      "services": ["Driving School", "IDP", "Membership Registration"],
+      "loadPercent": 56,
+      "contacts": {
+        "phone": ["0709333026"]
+      }
+    },
+    {
+      "branchId": "KTL001",
+      "name": "AA Kitengela",
+      "city": "Kajiado",
+      "locality": "Kitengela",
+      "category": "satellite",
+      "lat": -1.479,
+      "lon": 36.958,
+      "location": {
+        "building": "Kitengela Plaza",
+        "floor": "1st Floor",
+        "area": "Kitengela",
+        "fullAddress": "Kitengela Plaza, 1st Floor, Kitengela"
+      },
+      "address": "Kitengela Plaza, 1st Floor, Kitengela",
+      "services": ["Driving School", "IDP", "Membership Registration"],
+      "loadPercent": 49,
+      "contacts": {
+        "phone": ["0709333130"]
+      }
+    }
+  ],
+  "links": [
+    { "source": "HQ1", "target": "NBO001", "type": "OVERSEES" },
+    { "source": "HQ1", "target": "NBO002", "type": "OVERSEES" },
+    { "source": "HQ1", "target": "NBO003", "type": "OVERSEES" },
+    { "source": "HQ1", "target": "NBO004", "type": "OVERSEES" },
+    { "source": "HQ1", "target": "NBO005", "type": "OVERSEES" },
+    { "source": "HQ1", "target": "NBO006", "type": "OVERSEES" },
+    { "source": "HQ1", "target": "NBO007", "type": "OVERSEES" },
+    { "source": "HQ1", "target": "NBO008", "type": "OVERSEES" },
+    { "source": "HQ1", "target": "NBO009", "type": "OVERSEES" },
+    { "source": "HQ1", "target": "NBO010", "type": "OVERSEES" },
+    { "source": "HQ1", "target": "KTL001", "type": "OVERSEES" },
+    { "source": "NBO004", "target": "NBO003", "type": "NEAR_TO", "distance_km": 4 },
+    { "source": "NBO008", "target": "NBO002", "type": "NEAR_TO", "distance_km": 6 },
+    { "source": "NBO006", "target": "NBO007", "type": "NEAR_TO", "distance_km": 6 },
+    { "source": "NBO005", "target": "NBO009", "type": "NEAR_TO", "distance_km": 8 },
+    { "source": "NBO010", "target": "NBO008", "type": "NEAR_TO", "distance_km": 5 }
+  ]
+}

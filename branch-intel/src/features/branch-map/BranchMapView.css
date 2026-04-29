@@ -1,0 +1,50 @@
+.branch-map {
+  height: 100%;
+  min-height: 420px;
+  width: 100%;
+  position: relative;
+}
+
+.branch-map__container {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.branch-map__pin {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.branch-map__pin--hq {
+  background: var(--aa-green-strong);
+}
+
+.branch-map__pin--flagship {
+  background: var(--aa-green);
+}
+
+.branch-map__pin--satellite {
+  background: #c2a700;
+}
+
+.branch-map__pin--selected {
+  outline: 3px solid var(--aa-yellow);
+  outline-offset: 2px;
+}
+
+.branch-map__popup-address {
+  font-size: 13px;
+  margin-top: 4px;
+  color: var(--text);
+}
+
+.branch-map__services {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  text-align: left;
+  font-size: 13px;
+}

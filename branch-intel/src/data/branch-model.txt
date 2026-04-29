@@ -1,0 +1,66 @@
+{
+    "hq": {
+        "id": "HQ1",
+        "name": "AA Kenya Headquarters",
+        "city": "Nairobi",
+        "locality": "Upper Hill",
+        "lat": -1.2998,
+        "lon": 36.8155,
+        "location": {
+            "building": "Renaissance Corporate Park",
+            "floor": "8th Floor",
+            "area": "Upper Hill",
+            "fullAddress": "Renaissance Corporate Park, 8th Floor, Upper Hill, Nairobi"
+        },
+        "address": "Renaissance Corporate Park, 8th Floor, Upper Hill, Nairobi",
+        "contacts": {
+            "phone": ["0709933011"]
+        }
+    },
+    "services": [
+        "Driving School",
+        "Vehicle Valuation",
+        "Vehicle Inspection",
+        "IDP",
+        "Membership Registration"
+    ],
+    "branches": [
+        {
+            "branchId": "NBO001",
+            "name": "AA Hurlingham",
+            "city": "Nairobi",
+            "locality": "Hurlingham",
+            "category": "satellite",
+            "lat": -1.296,
+            "lon": 36.79,
+            "location": {
+                "building": "APA Arcade",
+                "floor": "3rd Floor",
+                "street": "<optional street>",
+                "landmark": "<optional landmark>",
+                "area": "Hurlingham",
+                "proximity": ["<optional proximity hints>"],
+                "fullAddress": "APA Arcade, 3rd Floor, Hurlingham, Nairobi"
+            },
+            "address": "APA Arcade, 3rd Floor, Hurlingham",
+            "services": [
+                "Driving School",
+                "IDP",
+                "Membership Registration"
+            ],
+            "loadPercent": 60,
+            "contacts": {
+                "phone": ["0709933000"],
+                "whatsapp": null,
+                "email": null
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "HQ1",
+            "target": "NBO001",
+            "type": "OVERSEES"
+        }
+    ]
+}

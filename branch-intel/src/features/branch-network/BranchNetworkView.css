@@ -1,0 +1,14 @@
+.branch-network {
+  height: 100%;
+  min-height: 420px;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.branch-network__canvas {
+  height: 100% !important;
+  width: 100% !important;
+}
