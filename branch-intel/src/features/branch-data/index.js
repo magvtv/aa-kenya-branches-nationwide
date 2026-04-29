@@ -1,0 +1,1 @@
+export { getBranchIntelData } from './branchData'
