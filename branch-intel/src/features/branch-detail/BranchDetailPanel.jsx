@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useBranchIntel } from '../../app/useBranchIntel'
 import { findBestBranches } from '../recommendation'
+import { PlaceSearchInput } from '../place-search'
 import './BranchDetailPanel.css'
 
 export function BranchDetailPanel({ branches, branchMatches }) {
@@ -11,8 +12,8 @@ export function BranchDetailPanel({ branches, branchMatches }) {
     selectById,
     userLat,
     userLon,
-    setUserLat,
-    setUserLon,
+    userLabel,
+    setUserPlace,
   } = useBranchIntel()
 
   const [requiredService, setRequiredService] = useState(
@@ -78,27 +79,13 @@ export function BranchDetailPanel({ branches, branchMatches }) {
       <section className="branch-detail__section">
         <h3 className="branch-detail__section-title">Nearest best branch</h3>
         <p className="branch-detail__hint branch-detail__hint--small">
-          Uses distance, estimated load, and flagship preference. Choose your
-          location and required service.
+          Search a town or area, or use your location. We rank branches by
+          distance, load, and flagship preference.
         </p>
-        <label className="branch-detail__field">
-          <span>Latitude</span>
-          <input
-            type="number"
-            step="any"
-            value={userLat}
-            onChange={(e) => setUserLat(Number(e.target.value))}
-          />
-        </label>
-        <label className="branch-detail__field">
-          <span>Longitude</span>
-          <input
-            type="number"
-            step="any"
-            value={userLon}
-            onChange={(e) => setUserLon(Number(e.target.value))}
-          />
-        </label>
+        <PlaceSearchInput
+          value={{ lat: userLat, lon: userLon, label: userLabel }}
+          onPick={(place) => setUserPlace(place)}
+        />
         <label className="branch-detail__field">
           <span>Required service</span>
           <select
