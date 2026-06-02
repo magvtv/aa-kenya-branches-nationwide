@@ -1,139 +1,338 @@
 .branch-detail {
-  width: 320px;
+  flex: 2 1 40%;
+  min-width: 0;
+  max-width: 40%;
   flex-shrink: 0;
   border-left: 1px solid var(--border);
-  padding: 16px;
+  padding: 20px;
   text-align: left;
   overflow-y: auto;
-  max-height: calc(100vh - 120px);
+  background: linear-gradient(180deg, #fafdfb 0%, #ffffff 120px);
 }
 
 .branch-detail__title {
   font-size: 18px;
-  margin: 0 0 12px;
-}
-
-.branch-detail__card h3 {
-  font-size: 17px;
-  margin: 8px 0;
-}
-
-.branch-detail__badge {
-  display: inline-block;
-  margin: 0;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.branch-detail__badge--hq {
-  background: rgba(0, 100, 58, 0.12);
+  margin: 0 0 16px;
   color: var(--aa-green-strong);
 }
 
-.branch-detail__badge--flagship {
-  background: rgba(0, 100, 58, 0.12);
-  color: var(--aa-green);
-}
-
-.branch-detail__badge--satellite {
-  background: rgba(243, 209, 9, 0.25);
-  color: #7d6a00;
-}
-
-.branch-detail__meta {
-  font-size: 14px;
-  margin: 4px 0;
-  color: var(--text);
-}
-
-.branch-detail__load {
-  font-size: 14px;
-  margin-top: 8px;
-  color: var(--text-h);
-}
-
-.branch-detail__services {
-  margin: 8px 0 0;
-  padding-left: 18px;
-  font-size: 14px;
+.branch-detail__empty {
+  padding: 20px 16px;
+  border-radius: 12px;
+  border: 1px dashed var(--border);
+  background: var(--social-bg);
 }
 
 .branch-detail__hint {
   font-size: 14px;
   color: var(--text);
   margin: 0;
+  line-height: 1.5;
 }
 
 .branch-detail__hint--small {
   font-size: 13px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
+/* Branch info card */
+.branch-card {
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 81, 47, 0.06);
+}
+
+.branch-card--hq .branch-card__header {
+  position: relative;
+  background: linear-gradient(140deg, #004b2c 0%, #00643a 56%, #1a8456 100%);
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+.branch-card--hq .branch-card__header::after {
+  content: '';
+  position: absolute;
+  right: -28px;
+  top: -28px;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(243, 209, 9, 0.34) 0%, rgba(243, 209, 9, 0) 72%);
+  pointer-events: none;
+}
+
+.branch-card--flagship .branch-card__header {
+  background: linear-gradient(135deg, var(--aa-green-strong) 0%, var(--aa-green) 100%);
+}
+
+.branch-card--satellite .branch-card__header {
+  background: linear-gradient(135deg, #8a7200 0%, #c2a700 100%);
+}
+
+.branch-card__header {
+  padding: 16px 18px 14px;
+  color: #fff;
+}
+
+.branch-card__badge {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.branch-card__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.branch-card__subtitle {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.branch-card__location {
+  padding: 14px 18px 0;
+}
+
+.branch-card__location-line {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--aa-green);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.branch-card--hq .branch-card__location-line {
+  color: #0b6a42;
+}
+
+.branch-card--hq .branch-card__location {
+  padding-bottom: 14px;
+}
+
+.branch-card__address {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-h);
+}
+
+.branch-card--hq .branch-card__address {
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d5e6dc;
+  background: linear-gradient(180deg, #ffffff 0%, #f6fbf8 100%);
+}
+
+.branch-card__load {
+  padding: 14px 18px 0;
+}
+
+.branch-card__load-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.branch-card__load-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.branch-card__load-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--aa-green-strong);
+}
+
+.branch-card__load-track {
+  height: 8px;
+  border-radius: 999px;
+  background: #e8efeb;
+  overflow: hidden;
+}
+
+.branch-card__load-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.branch-card__load-fill--low {
+  background: var(--aa-green);
+}
+
+.branch-card__load-fill--medium {
+  background: #c2a700;
+}
+
+.branch-card__load-fill--high {
+  background: #c45c26;
+}
+
+.branch-card__services-wrap {
+  padding: 14px 18px 18px;
+}
+
+.branch-card__services-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.branch-card__services {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.branch-card__service-pill {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--aa-green-strong);
+  border: 1px solid var(--accent-border);
+  font-weight: 500;
+}
+
+/* Nearest branch section */
 .branch-detail__section {
   margin-top: 24px;
-  padding-top: 16px;
+  padding-top: 20px;
   border-top: 1px solid var(--border);
 }
 
 .branch-detail__section-title {
   font-size: 16px;
+  font-weight: 600;
   margin: 0 0 8px;
+  color: var(--aa-green-strong);
+}
+
+.branch-detail__fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 12px;
 }
 
 .branch-detail__field {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-bottom: 10px;
-  font-size: 13px;
-  color: var(--text-h);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.branch-detail__field--full {
+  grid-column: 1 / -1;
 }
 
 .branch-detail__field input,
 .branch-detail__field select {
-  padding: 8px 10px;
-  border-radius: 6px;
+  padding: 9px 11px;
+  border-radius: 8px;
   border: 1px solid var(--border);
-  background: var(--bg);
+  background: #fff;
   color: var(--text-h);
   font-size: 14px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.branch-detail__field input:focus,
+.branch-detail__field select:focus {
+  outline: 2px solid var(--aa-yellow);
+  outline-offset: 1px;
+  border-color: var(--aa-green);
 }
 
 .branch-detail__ranked {
   list-style: none;
   padding: 0;
-  margin: 12px 0 0;
+  margin: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.branch-detail__rank-btn {
+.branch-detail__rank-card {
   width: 100%;
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 10px;
-  margin-bottom: 8px;
-  border-radius: 8px;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 14px 14px 12px;
+  border-radius: 12px;
   border: 1px solid var(--border);
-  background: var(--social-bg);
+  background: #fff;
   cursor: pointer;
   text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
 }
 
-.branch-detail__rank-btn:hover {
+.branch-detail__rank-card:hover {
   border-color: var(--accent-border);
+  box-shadow: 0 4px 14px rgba(0, 100, 58, 0.1);
+  transform: translateY(-1px);
 }
 
-.branch-detail__rank-num {
+.branch-detail__rank-card.is-selected {
+  border-color: var(--aa-green);
+  background: linear-gradient(90deg, rgba(0, 100, 58, 0.06) 0%, #fff 40%);
+  box-shadow: 0 0 0 1px var(--aa-green);
+}
+
+.branch-detail__rank-rank {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--aa-green);
+  color: #fff;
+  font-size: 15px;
   font-weight: 700;
-  color: var(--aa-green);
-  min-width: 1.25rem;
 }
 
-.branch-detail__rank-body {
+.branch-detail__rank-content {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -141,19 +340,44 @@
 
 .branch-detail__rank-name {
   font-weight: 600;
+  font-size: 15px;
   color: var(--text-h);
 }
 
-.branch-detail__rank-stats {
+.branch-detail__rank-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 0;
   font-size: 12px;
   color: var(--text);
 }
 
+.branch-detail__rank-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border);
+  margin: 0 8px;
+}
+
+.branch-detail__rank-chevron {
+  flex-shrink: 0;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--aa-green);
+  opacity: 0.7;
+}
+
 @media (max-width: 900px) {
   .branch-detail {
-    width: 100%;
-    max-height: none;
+    flex: 1 1 100%;
+    max-width: 100%;
     border-left: none;
     border-top: 1px solid var(--border);
+  }
+
+  .branch-intel__body {
+    flex-direction: column;
   }
 }

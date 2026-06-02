@@ -3,6 +3,74 @@ import { useBranchIntel } from '../../app/useBranchIntel'
 import { findBestBranches } from '../recommendation'
 import './BranchDetailPanel.css'
 
+function LoadBar({ percent }) {
+  const level =
+    percent >= 70 ? 'high' : percent >= 50 ? 'medium' : 'low'
+  return (
+    <div className="branch-card__load">
+      <div className="branch-card__load-header">
+        <span className="branch-card__load-label">Estimated load</span>
+        <span className="branch-card__load-value">{percent}%</span>
+      </div>
+      <div className="branch-card__load-track" role="presentation">
+        <div
+          className={`branch-card__load-fill branch-card__load-fill--${level}`}
+          style={{ width: `${Math.min(100, Math.max(0, percent))}%` }}
+        />
+      </div>
+    </div>
+  )
+}
+
+function ServiceList({ services }) {
+  return (
+    <ul className="branch-card__services">
+      {services.map((s) => (
+        <li key={s} className="branch-card__service-pill">
+          {s}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function BranchCard({
+  badge,
+  badgeVariant,
+  title,
+  locationLine,
+  address,
+  loadPercent,
+  services,
+  subtitle,
+}) {
+  return (
+    <article className={`branch-card branch-card--${badgeVariant}`}>
+      <header className="branch-card__header">
+        <span className={`branch-card__badge branch-card__badge--${badgeVariant}`}>
+          {badge}
+        </span>
+        <h3 className="branch-card__title">{title}</h3>
+        {subtitle && <p className="branch-card__subtitle">{subtitle}</p>}
+      </header>
+
+      <div className="branch-card__location">
+        {locationLine && <p className="branch-card__location-line">{locationLine}</p>}
+        {address && <p className="branch-card__address">{address}</p>}
+      </div>
+
+      {loadPercent != null && <LoadBar percent={loadPercent} />}
+
+      {services && services.length > 0 && (
+        <div className="branch-card__services-wrap">
+          <span className="branch-card__services-label">Services</span>
+          <ServiceList services={services} />
+        </div>
+      )}
+    </article>
+  )
+}
+
 export function BranchDetailPanel({ branches, branchMatches }) {
   const {
     hq,
@@ -36,43 +104,30 @@ export function BranchDetailPanel({ branches, branchMatches }) {
       <h2 className="branch-detail__title">Details</h2>
 
       {showHq ? (
-        <div className="branch-detail__card">
-          <p className="branch-detail__badge branch-detail__badge--hq">HQ</p>
-          <h3>{hq.name}</h3>
-          <p className="branch-detail__meta">{hq.address}</p>
-        </div>
+        <BranchCard
+          badge="HQ"
+          badgeVariant="hq"
+          title={hq.name}
+          subtitle="National operations center"
+          locationLine="Upper Hill, Nairobi"
+          address={hq.address}
+        />
       ) : selectedBranch ? (
-        <div className="branch-detail__card">
-          <p
-            className={`branch-detail__badge ${
-              selectedBranch.category === 'flagship'
-                ? 'branch-detail__badge--flagship'
-                : 'branch-detail__badge--satellite'
-            }`}
-          >
-            {selectedBranch.category === 'flagship' ? 'Flagship' : 'Satellite'}
-          </p>
-          <h3>{selectedBranch.name}</h3>
-          <p className="branch-detail__meta">
-            {selectedBranch.city}
-            {selectedBranch.locality ? ` · ${selectedBranch.locality}` : ''}
-          </p>
-          {selectedBranch.address && (
-            <p className="branch-detail__meta">{selectedBranch.address}</p>
-          )}
-          <p className="branch-detail__load">
-            Estimated load: {selectedBranch.loadPercent}%
-          </p>
-          <ul className="branch-detail__services">
-            {selectedBranch.services.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
-        </div>
+        <BranchCard
+          badge={selectedBranch.category === 'flagship' ? 'Flagship' : 'Satellite'}
+          badgeVariant={selectedBranch.category === 'flagship' ? 'flagship' : 'satellite'}
+          title={selectedBranch.name}
+          locationLine={`${selectedBranch.city}${selectedBranch.locality ? ` · ${selectedBranch.locality}` : ''}`}
+          address={selectedBranch.address}
+          loadPercent={selectedBranch.loadPercent}
+          services={selectedBranch.services}
+        />
       ) : (
-        <p className="branch-detail__hint">
-          Select a marker or graph node to view branch information.
-        </p>
+        <div className="branch-detail__empty">
+          <p className="branch-detail__hint">
+            Select a marker or graph node to view branch information.
+          </p>
+        </div>
       )}
 
       <section className="branch-detail__section">
@@ -81,53 +136,61 @@ export function BranchDetailPanel({ branches, branchMatches }) {
           Uses distance, estimated load, and flagship preference. Choose your
           location and required service.
         </p>
-        <label className="branch-detail__field">
-          <span>Latitude</span>
-          <input
-            type="number"
-            step="any"
-            value={userLat}
-            onChange={(e) => setUserLat(Number(e.target.value))}
-          />
-        </label>
-        <label className="branch-detail__field">
-          <span>Longitude</span>
-          <input
-            type="number"
-            step="any"
-            value={userLon}
-            onChange={(e) => setUserLon(Number(e.target.value))}
-          />
-        </label>
-        <label className="branch-detail__field">
-          <span>Required service</span>
-          <select
-            value={requiredService}
-            onChange={(e) => setRequiredService(e.target.value)}
-          >
-            {serviceCatalog.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </select>
-        </label>
+        <div className="branch-detail__fields">
+          <label className="branch-detail__field">
+            <span>Latitude</span>
+            <input
+              type="number"
+              step="any"
+              value={userLat}
+              onChange={(e) => setUserLat(Number(e.target.value))}
+            />
+          </label>
+          <label className="branch-detail__field">
+            <span>Longitude</span>
+            <input
+              type="number"
+              step="any"
+              value={userLon}
+              onChange={(e) => setUserLon(Number(e.target.value))}
+            />
+          </label>
+          <label className="branch-detail__field branch-detail__field--full">
+            <span>Required service</span>
+            <select
+              value={requiredService}
+              onChange={(e) => setRequiredService(e.target.value)}
+            >
+              {serviceCatalog.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
 
         <ol className="branch-detail__ranked">
           {bestRows.map((row, i) => (
             <li key={row.branch.branchId}>
               <button
                 type="button"
-                className="branch-detail__rank-btn"
+                className={`branch-detail__rank-card${selectedId === row.branch.branchId ? ' is-selected' : ''}`}
                 onClick={() => selectById(row.branch.branchId)}
               >
-                <span className="branch-detail__rank-num">{i + 1}</span>
-                <span className="branch-detail__rank-body">
+                <span className="branch-detail__rank-rank">{i + 1}</span>
+                <span className="branch-detail__rank-content">
                   <span className="branch-detail__rank-name">{row.branch.name}</span>
-                  <span className="branch-detail__rank-stats">
-                    {row.distKm.toFixed(1)} km · score {row.score.toFixed(2)} · load{' '}
-                    {row.loadPercent}%
+                  <span className="branch-detail__rank-meta">
+                    <span>{row.distKm.toFixed(1)} km</span>
+                    <span className="branch-detail__rank-dot" aria-hidden="true" />
+                    <span>Score {row.score.toFixed(2)}</span>
+                    <span className="branch-detail__rank-dot" aria-hidden="true" />
+                    <span>Load {row.loadPercent}%</span>
                   </span>
+                </span>
+                <span className="branch-detail__rank-chevron" aria-hidden="true">
+                  ›
                 </span>
               </button>
             </li>
