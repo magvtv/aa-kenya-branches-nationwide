@@ -8,7 +8,7 @@ import './App.css'
 
 function BranchIntelShell() {
   const { viewMode, setViewMode, branches, serviceCatalog } = useBranchIntel()
-  const { selected, toggle, clear, branchMatches } = useServiceFilters()
+  const { selected, query, setQuery, toggle, clearAll, branchMatches } = useServiceFilters()
 
   return (
     <div className="branch-intel bg-white">
@@ -47,12 +47,16 @@ function BranchIntelShell() {
         </div>
       </header>
 
-      <ServiceFilters
-        serviceCatalog={serviceCatalog}
-        selected={selected}
-        onToggle={toggle}
-        onClear={clear}
-      />
+      <div className="branch-intel__toolbar">
+        <ServiceFilters
+          serviceCatalog={serviceCatalog}
+          selected={selected}
+          query={query}
+          onQueryChange={setQuery}
+          onToggle={toggle}
+          onClearAll={clearAll}
+        />
+      </div>
 
       <div className="branch-intel__body">
         <main className="branch-intel__stage" aria-live="polite">
