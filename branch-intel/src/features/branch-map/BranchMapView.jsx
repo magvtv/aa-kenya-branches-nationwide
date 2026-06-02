@@ -24,6 +24,10 @@ function makeDivIcon(kind, selected) {
 
 const MAP_CENTER = [-1.29, 36.82]
 const MAP_ZOOM = 6
+const KENYA_BOUNDS = [
+  [-4.9, 33.45],
+  [5.5, 41.95],
+]
 
 export function BranchMapView({ filteredBranches, branchMatches }) {
   const { hq, selectedId, selectById } = useBranchIntel()
@@ -37,6 +41,10 @@ export function BranchMapView({ filteredBranches, branchMatches }) {
       center: MAP_CENTER,
       zoom: MAP_ZOOM,
       scrollWheelZoom: true,
+      minZoom: 6,
+      maxZoom: 13,
+      maxBounds: KENYA_BOUNDS,
+      maxBoundsViscosity: 1,
     }),
     [],
   )
@@ -51,6 +59,7 @@ export function BranchMapView({ filteredBranches, branchMatches }) {
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          noWrap
         />
         <Marker
           position={[hq.lat, hq.lon]}

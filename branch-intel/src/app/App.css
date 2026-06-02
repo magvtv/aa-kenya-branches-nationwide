@@ -10,8 +10,8 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
-  padding: 16px 16px 0;
+  gap: 18px;
+  padding: 20px 20px 14px;
 }
 
 .branch-intel__heading {
@@ -54,6 +54,15 @@
   outline-offset: 2px;
 }
 
+.branch-intel__toolbar {
+  position: relative;
+  z-index: 1200;
+  padding: 0 20px 14px;
+  border-bottom: 1px solid var(--border);
+  background: #ffffffcc;
+  backdrop-filter: blur(2px);
+}
+
 .branch-intel__body {
   display: flex;
   flex: 1;
@@ -61,9 +70,27 @@
 }
 
 .branch-intel__stage {
-  flex: 1;
+  position: relative;
+  z-index: 1;
+  flex: 3 1 60%;
   min-width: 0;
+  max-width: 60%;
   padding: 16px;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  .branch-intel__header {
+    padding: 16px 14px 12px;
+  }
+
+  .branch-intel__toolbar {
+    padding: 0 14px 12px;
+  }
+
+  .branch-intel__stage {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
 }
